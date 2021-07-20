@@ -1,0 +1,12 @@
+#upload{
+    margin-top: 15px;
+    width: 500px;
+    justify-content: center;
+}
+
+#arch{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+

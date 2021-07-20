@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div id="separador" class="container">
+    <button data-bs-toggle="modal" data-bs-target="#MensajeNuevo" style="margin-top: 10px; margin-left: 10px;" class="btn btn-secondary rounded-pill"><i class="fas fa-plus"></i> Redactar</button>
+  </div>
+  <div id="mails" class="container scrobable">
+      <!--Table-->
+    <table class="table table-dark table-striped table-hover mails">
+
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Destinatario</th>
+          <th>Mensaje</th>
+          <th>Usuario</th>
+          <th>Fecha</th>    
+        </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+        <tr class="table" *ngFor="let mail of mails let f=index">
+          <th class="tablenumber"scope="row">{{f+1}}</th>
+          <td>{{mail.destinatario}}</td>
+          <td>{{mail.mensaje}}</td>
+          <td>{{mail.username}}</td>
+          <td>{{mail.fecha}}</td>
+          
+          
+        </tr>
+      </tbody>
+      <!--Table body-->
+
+
+    </table>
+    <!--Table-->
+  </div>
+
+    <div class="modal fade" id="MensajeNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header pt-0 pb-0">
+            <p class="modal-title" id="exampleModalLabel">Mensaje Nuevo</p>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="mailform" (ngSubmit)="sendRealMail()">
+              <div class="form-group">
+                <label for="formGroupExampleInput">Destinatario</label>
+                <input formControlName="email" type="email" name="correo" class="form-control" id="formGroupExampleInput" placeholder="@" [(ngModel)]="mail.destinatario">
+                <div class="alert-danger" *ngIf="email?.touched && email?.invalid"> 
+                  <div class="container-error-message" *ngIf="email?.errors?.required">
+                    Email is required
+                  </div>
+                  <div class="container-error-message" *ngIf="(email?.dirty || email?.touched) && email?.invalid && email?.errors?.pattern">
+                    Invalid Email
+                  </div>
+                </div>
+               </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Mensaje</label>
+                <input formControlName="message" type="text" name="mensaje" class="form-control" id="formGroupExampleInput"  [(ngModel)]="mail.mensaje">
+                <div class="alert-danger" *ngIf="message?.touched && message?.invalid"> 
+                  <div class="container-error-message" *ngIf="message?.errors?.required">
+                    Message is required
+                  </div>
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-dark" type="submit" style="margin-top: 45px;"><i class="fas fa-paper-plane"></i> Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+</body>
+</html>
+
+   
+

@@ -1,0 +1,57 @@
+
+body{
+background-color:rebeccapurple;
+}
+
+#send{
+    width: 500px;
+    justify-content: center;
+    
+}
+
+#mails{
+    display: flex;
+    float: right;
+    width:90%;
+    
+}
+
+#separador{
+display: flex;
+float: left;
+height: 50px;
+}
+
+#izq{
+    float: left;
+    width:10%;
+}
+
+.modal-header {
+    padding:1em;
+    border-bottom:1px solid #eee;
+    background-color: #000;
+    color: #fff;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+ }
+
+
+ .container-error-message{
+    padding: 3px;
+ }
+
+ .scrobable{
+     height: 550px;
+     overflow: scroll;
+ }
+
+
+    
+    
+
+  

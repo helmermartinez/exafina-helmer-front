@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+
+    <div class="app">
+        <div class="bg"></div>
+
+        <form (submit)="log()">
+            <header>
+                <img src="/assets/img/logo.svg" alt="main image">
+            </header>
+            <div class="inputs">
+                <input type="text" [(ngModel)]="usuario.username" name="username" placeholder="Username">
+                <input type="password" [(ngModel)]="usuario.password" name="password" placeholder="Password">
+                <p class="light"><a href="#">Forgot password?</a></p>
+            </div>
+            <div style="margin-top: 50px;">
+                <input id= "log" type="submit" value="Login" class="btn solid"/>
+            </div>   
+        </form>
+        <footer >
+            <p>Dont have an account?<a href="#">Sing Up</a></p>
+        </footer>
+    </div>
+    
+</body>
+</html>
